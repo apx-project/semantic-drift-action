@@ -1,0 +1,30 @@
+{
+  "name": "@apx/semantic-drift-action",
+  "version": "0.1.0",
+  "description": "GitHub Action that implements APX Law #1 (Semantic Drift Visibility).",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --platform=node --target=node20 --outfile=dist/index.js",
+    "lint": "node --check src/index.js"
+  },
+  "keywords": [
+    "github-actions",
+    "apx",
+    "semantic",
+    "drift",
+    "labels"
+  ],
+  "author": "APX Project",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0"
+  }
+}
+
