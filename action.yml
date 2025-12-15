@@ -1,5 +1,5 @@
-name: 'APX Semantic Drift'
-description: 'Implements Law #1 of Evolvable Software by tagging pull requests with semantic drift findings from APX.'
+name: 'APX Semantic SemanticDebt'
+description: 'Implements Law #1 of Evolvable Software by tagging pull requests with semantic semantic_debt findings from APX.'
 author: 'apx-project'
 branding:
   icon: 'activity'
@@ -14,9 +14,21 @@ inputs:
     required: false
     default: '.apx/semantic_diff.json'
   fail-on-security:
-    description: 'If true, the action fails when a high/critical security drift is detected.'
+    description: 'If true, the action fails when a high/critical security semantic_debt is detected.'
     required: false
     default: 'false'
+  studio-lite-url:
+    description: 'Optional URL to Studio Lite so reviewers can open the read-only semantic_debt dashboard (e.g., https://apx.run/lite?source=github).'
+    required: false
+    default: 'https://apx.run/lite'
+  telemetry-url:
+    description: 'Optional runner/telemetry endpoint to record Law #1 installs (e.g., https://localhost:8787).'
+    required: false
+    default: ''
+  scan-path:
+    description: 'Path to the JSON produced by `apx scan --json --output <file>`. When present, the action summarizes Semantic Debt score/cost in the PR comment.'
+    required: false
+    default: '.apx/semantic_debt_scan.json'
 
 outputs:
   labels-applied:
@@ -24,7 +36,9 @@ outputs:
   law:
     description: 'The evolvable software law enforced by this action (always `1`).'
   security-alert:
-    description: 'Whether a high/critical security drift was detected.'
+    description: 'Whether a high/critical security semantic_debt was detected.'
+  semantic-debt-score:
+    description: 'Semantic Debt score reported by `apx scan`, if available.'
 
 runs:
   using: 'node20'

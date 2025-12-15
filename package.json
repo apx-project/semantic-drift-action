@@ -1,7 +1,7 @@
 {
-  "name": "@apx/semantic-drift-action",
+  "name": "@apx/semantic-semantic_debt-action",
   "version": "0.1.0",
-  "description": "GitHub Action that implements APX Law #1 (Semantic Drift Visibility).",
+  "description": "GitHub Action that implements APX Law #1 (Semantic SemanticDebt Visibility).",
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --target=node20 --outfile=dist/index.js",
@@ -11,7 +11,7 @@
     "github-actions",
     "apx",
     "semantic",
-    "drift",
+    "semantic_debt",
     "labels"
   ],
   "author": "APX Project",
